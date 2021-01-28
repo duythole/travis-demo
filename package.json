@@ -1,0 +1,30 @@
+{
+  "name": "demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "server": "nodemon index.js --ignore tests",
+    "test": "jest --watchAll --verbose --detectOpenHandles --forceExit --maxWorkers=10"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "amqp-connection-manager": "^3.2.1",
+    "amqplib": "^0.6.0",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "jest": "^26.6.3",
+    "migrate-mongoose": "^4.0.0",
+    "mongoose": "^5.11.10",
+    "nodemon": "^2.0.7",
+    "puppeteer": "^5.5.0",
+    "redis": "^3.0.2",
+    "util": "^0.12.3",
+    "uuid": "^8.3.2"
+  }
+}

@@ -1,0 +1,30 @@
+language: node_js
+node_js:
+  - "12"
+dist: trusty
+sudo: false  
+services:
+  - rabbitmq
+  - mongodb
+  - redis-server
+env:
+  - NODE_ENV=ci
+addons:
+  chrome: stable
+before_install:
+  - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost
+# cache:
+#   npm: true
+#   directories:
+#     - node_modules
+# dist: trusty
+install:
+  - npm install
+script:
+  # - echo 'start build application'
+  # - npm install
+  - echo 'start run application'
+  - nohup npm run start &
+  #- sleep 3
+  #- echo 'running test'
+  #- npm run test
